@@ -7,13 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table border="1">
-		<tr>
-             <td>Hello ${message} you registered successfully</td>
-        </tr>
-        <tr>
-              <td><a href="/login">Click Here to Login</a></td>
-        </tr>
-</table>
+Hello ${name} ur not  admin 
 </body>
 </html>

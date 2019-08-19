@@ -24,12 +24,10 @@
 <form:form method="get" modelAttribute="listdata" action="search">
 
 
-<table border="1">
+<table border="4">
      
-     <tr><th colspan="4">The Details of the Registered Student</th>
-          <th colspan="3"><input type="text" name="name"/>
-                          <input type="submit"name="Search"/>
-          </th>
+     <tr><th colspan="7">The Details of the Registered Student</th>
+         
      </tr>
     
      <tr>    
@@ -53,17 +51,12 @@
 		  	<td><a href="/update?sid=${emp.getSid()}">Update</a>
 		  	<td><a href="/delete?sid=${emp.getSid()}">Delete</a>
 		</tr>
-		
 </c:forEach>
-
-<tr>
-		   <td colspan="4"><a href="/jsonlistdata">List Of Student Details with higher percentage to lower</a></td>
-		   <td colspan="3"><a href="/">Logout</a></td>
-		   
-	</tr>
+	
 
 </table>
-
+<a href="/getalllist">GetListData</a>
+<a href="/">Logout</a>
 
 </form:form>
 

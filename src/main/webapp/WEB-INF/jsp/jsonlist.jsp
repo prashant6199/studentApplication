@@ -13,6 +13,8 @@
 <%@page import="com.example.demo.controller.RegistrationController" %>
 <%@page import="com.example.demo.model.Registration" %>
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,50 +23,37 @@
 </head>
 <body>
 
-<form:form method="get" modelAttribute="listdata" action="search">
-
+<form:form method="get">
 
 <table border="1">
-     
-     <tr><th colspan="4">The Details of the Registered Student</th>
-          <th colspan="3"><input type="text" name="name"/>
-                          <input type="submit"name="Search"/>
-          </th>
-     </tr>
-    
+
      <tr>    
      	<th>Student ID</th>
     	 <th>Student Name</th>
-    	 <th>Student Age</th>
     	 <th>Total Marks</th>
     	 <th>Percentage</th>
-    	 <th>Update</th>
-    	 <th>Delete</th>
-     
-     </tr>
-    
- <c:forEach var="emp" items="${listdata}">
-		<tr> 
-		  	<td> ${emp.getSid()}</td>
-		  	<td>  ${emp.getName()}</td>
-		  	<td>  ${emp.getAge()}</td>
-		  	<td>  ${emp.getTotal_marks()}</td>
-		  	<td>  ${emp.getPercentage()}</td>
-		  	<td><a href="/update?sid=${emp.getSid()}">Update</a>
-		  	<td><a href="/delete?sid=${emp.getSid()}">Delete</a>
-		</tr>
-		
-</c:forEach>
 
-<tr>
-		   <td colspan="4"><a href="/jsonlistdata">List Of Student Details with higher percentage to lower</a></td>
-		   <td colspan="3"><a href="/">Logout</a></td>
+     </tr>
+     <c:set var="i" value="0" scope="page"/>
+        <c:forEach var="name" items="${jsonresultname}">
+		  <tr> 
+		      <td>${jsonresultsid[i]}</td>
+	          <td>${jsonresultname[i]}</td>		  	 
+		      <td>${jsonresulttotal_marks[i]}</td>		  
+		      <td>${jsonresultpercentage[i]}</td>
+
+	          <c:set var="i" value="${i+1}" scope="page"/>
+		
+		 </tr>
+       </c:forEach>
+       
+       <tr>
+		   <td colspan="2" style="color: purple"><a href="/getalllist">Back</a></td>
+		   <td colspan="2"><a href="/">Logout</a></td>
 		   
 	</tr>
 
 </table>
-
-
 </form:form>
 
 </body>

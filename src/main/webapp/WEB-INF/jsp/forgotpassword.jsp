@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Forgot Password</title>
 
 <style>  
 .error{color:red}  
@@ -15,21 +15,28 @@
 
 </head>
 <body>
-<form:form action="loginvalid" modelAttribute="login" method="post">
+<form:form action="resetpassword" modelAttribute="newpass" method="Post">
 
 <table border="4">
 <tr>
      <td> User Name<form:input path="name"/></td>
-      <td><form:errors path="name" cssClass="error"/></td>
+    
+      
  </tr>
- 
- <tr>
-    <td> Password<form:password path="password"/></td>
-    <td>  <form:errors path="password" cssClass="error"/></td>
-  </tr>    
+
+   <tr>
+    <td> ID<form:input path="sid"/></td>
+   
+  </tr>
+  
+  <tr>
+    <td> New Password<form:password path="password"/></td>
+   
+  </tr>
+     
    </table>
-      <input type="submit" value="Login"/>
-       <a href="/forgotpassword">forgot Password</a>
+      <input type="submit" value="Submit"/>
+     
 </form:form>
 
 </body>

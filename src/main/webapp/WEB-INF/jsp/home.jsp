@@ -10,9 +10,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form >
-<a href="register">New Register</a>
-<a href="login">Login</a>
-</form:form>
+
+	<table border="1">
+		<tr>
+			<td><a href="register">New Register</a></td>
+			<td><a href="login">Login</a></td>
+		</tr>
+	</table>
+	
 </body>
 </html>

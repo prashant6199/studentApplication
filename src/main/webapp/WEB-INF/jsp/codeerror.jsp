@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p style="color: red">Hello ${lmessage} you are not registered </p>
+
+<table border="1">
+		<tr>
+             <td><p style="color: red">Hello ${lmessage} username or password is invalid </p></td>
+        </tr>
+        <tr>
+              <td><a href="/addRegister">Click Here to Register</a></td>
+        </tr>
+</table>
+
 </body>
 </html>

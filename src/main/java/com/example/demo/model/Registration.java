@@ -8,14 +8,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
+import org.hibernate.validator.constraints.NotEmpty;
 
-
-
+@XmlRootElement
 @Entity
 public class Registration implements Serializable{
      
@@ -24,7 +26,7 @@ public class Registration implements Serializable{
 	private int sid;
 	
 	@NotNull
-     @Size(min=1, max=10,message="Name Required")
+     @Size(min=1,message="Name Required")
 	private String name;
 	
 	@NotNull(message="Age Required")
@@ -42,6 +44,10 @@ public class Registration implements Serializable{
 	@Min(value=0, message="must be more then 0")
 	@Max(value=100,message ="must not be more then 100")
 	private double percentage;
+	
+	@NotNull
+    @Size(min=1, max=10,message="password Required and lenght should be less then 10")
+	private String password;
 	
 	public int getSid() {
 		return sid;
@@ -73,6 +79,12 @@ public class Registration implements Serializable{
 	}
 	public void setPercentage(double percentage) {
 		this.percentage = percentage;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	
